@@ -275,19 +275,19 @@ class TrkSeg implements Comparable<TrkSeg> {
 	}
 
 	public String toString() {
-		String s;
-		s = "  <trkpt lat=\"" + lat + "\" lon=\"" + lon + "\">\n";
-		s += "    <ele>" + ele + "</ele>\n";
-		s += "    <time>" + time + "</time>\n";
+		StringBuilder sb = new StringBuilder();
+		sb.append("  <trkpt lat=\"" + lat + "\" lon=\"" + lon + "\">\n");
+		sb.append("    <ele>" + ele + "</ele>\n");
+		sb.append("    <time>" + time + "</time>\n");
 		if(hr > 0) {
-			s += "    <extensions>\n";
-			s += "      <gpxtpx:TrackPointExtension>\n";
-			s += "      <gpxtpx:hr>" + hr + "</gpxtpx:hr>\n";
-			s += "      </gpxtpx:TrackPointExtension>\n";
-			s += "    </extensions>\n";
+			sb.append("    <extensions>\n");
+			sb.append("      <gpxtpx:TrackPointExtension>\n");
+			sb.append("      <gpxtpx:hr>" + hr + "</gpxtpx:hr>\n");
+			sb.append("      </gpxtpx:TrackPointExtension>\n");
+			sb.append("    </extensions>\n");
 		}
-		s += "  </trkpt>";
-		return s;
+		sb.append("  </trkpt>");
+		return sb.toString();
 	}
 
 }
